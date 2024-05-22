@@ -1,6 +1,4 @@
 # SurfaceWaterExtentTimeSeriesAnalysis
-Representation of the surface water area of the inland waterbody and depiction of the time series of the surface water extent values
-
 
 Guide to run the script for representing the surface water area of the inland waterbody and depicting the time series of the surface water extent values is demonstrated step by step:
 •	Set up the environment:
