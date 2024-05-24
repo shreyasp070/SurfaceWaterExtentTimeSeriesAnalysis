@@ -1,5 +1,4 @@
 # SurfaceWaterExtentTimeSeriesAnalysis
-
 Guide to run the script for representing the surface water area of the inland waterbody and depicting the time series of the surface water extent values is demonstrated step by step:
 •	Set up the environment:
    o	Installation of required libraries viz.  geopandas, earthengine-api, pandas, and numpy.
@@ -10,7 +9,7 @@ Guide to run the script for representing the surface water area of the inland wa
 •	Load the GeoJSON file
    o	Utilise geopandas library to load the GeoJSON file.
 •	Fetch surface water data from GEE
-   o	Query out the dataset and calculate the Spectral index MNDWI for water bodies detection. 
+   o	Query out the dataset and calculate the water extent and compute the water area.
 •	Process and aggregate the data:
    o	Calculate the surface water extent time series for the specified water body.
 •	Generate the time series dataframe
@@ -19,7 +18,8 @@ Guide to run the script for representing the surface water area of the inland wa
 Notes: 
 •	In the Script, provide the actual path of input parameters viz. GeoJSON file, the desired date range, and the path to save the plot image.
 •	Make sure the GeoJSON file contains a valid polygon representing the inland water body.
-•	Sentinel-2 dataset which provides high resolution (10m spatial resolution) images, is used to calculate Modified Normalized difference Water index (MNDWI) for detecting the water bodies. MNDWI utilises Green and Short wave 
-  infrared bands which are B3 and B11 respectively in Sentinel-2 dataset. 
-•	The threshold of ‘0’ is typically set in MNDWI images for water detection; but can be altered a bit depending upon the actual conditions of the area of interest.
+•	JRC Monthly Water History, v1.4 dataset comprises temporal distribution of surface water from 1984 to 2021 and provides statistics on the extent and change of those water surfaces. The data is generated using 4,716,475 
+   scenes from Landsat 5, 7, and 8 acquired between years 1984 and 2021. Each pixel is individually classified into water / non-water using an expert system and the results are collated into a monthly history for the entire 
+   time period.
+•	In computation of the water area class 2 is selected which signifies the water in the imagery.
 •	The script will output the time series of surface water extent values for the specified period and save the plot as an image file.
